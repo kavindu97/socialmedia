@@ -13,13 +13,15 @@ import java.util.List;
 public class FinancialController {
     @Autowired
     private Financialservice financialservice;
+
     @PostMapping("/save")
-    public String save(@RequestBody FinancialPeriod financialPeriod){
+    public String save(@RequestBody FinancialPeriod financialPeriod) {
         financialservice.savePeriod(financialPeriod);
         return "Saved";
     }
-@GetMapping("/show")
-    public List<FinancialPeriod> getall(){
+
+    @GetMapping("/show")
+    public List<FinancialPeriod> getall() {
         return financialservice.getting();
     }
 }

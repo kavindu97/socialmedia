@@ -11,9 +11,10 @@ import org.springframework.web.bind.annotation.*;
 public class ArticleController {
     @Autowired
     private ArticleService articleService;
+
     @PostMapping("/save")
-    public String saveArticle(@RequestBody Articles articles){
-       articleService.saveArticle(articles);
+    public String saveArticle(@RequestBody Articles articles) {
+        articleService.saveArticle(articles);
         return "saved Article";
     }
 }
