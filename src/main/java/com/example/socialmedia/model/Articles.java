@@ -18,17 +18,17 @@ import java.util.List;
 public class Articles {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private  int id;
+    private int id;
     private String title;
     @CreationTimestamp
     private Instant createdAt;
     private String textBody;
 
-@ManyToOne (cascade = CascadeType.ALL)
-@JoinColumn(name = "userId",referencedColumnName = "id")
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "userId", referencedColumnName = "id")
     private User user;
 
     @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "commentId",referencedColumnName = "id")
-    private List<Comment>comments;
+    @JoinColumn(name = "commentId", referencedColumnName = "id")
+    private List<Comment> comments;
 }
